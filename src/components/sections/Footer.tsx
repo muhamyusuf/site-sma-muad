@@ -44,7 +44,7 @@ export default function Footer() {
   return (
     <footer className="py-5 bg-white dark:bg-[#0d0d0d]">
       <div className="border-y w-full min-h-[100px] flex flex-col py-5">
-        <div className="w-full flex flex-col md:flex-row gap-10 md:gap-0 justify-between">
+        <div className="w-full flex flex-col flex-wrap md:flex-row gap-10 md:gap-0 justify-between">
           {/* Logo */}
           <div className="w-1/6">
             <Image
