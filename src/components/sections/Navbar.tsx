@@ -11,8 +11,8 @@ import Link from "next/link";
 const linkItem = [
   { name: "Home", link: "/" },
   { name: "About", link: "/about" },
-  { name: "Blog", link: "/blog" },
-  { name: "Contact", link: "/contact" },
+  { name: "Blog/News", link: "https://blog-sma-muad.vercel.app" },
+  { name: "Career", link: "/career" },
 ];
 
 // const socials = [
@@ -35,20 +35,25 @@ const linkItem = [
 
 export default function Navbar() {
   return (
-    <nav className="w-full flex justify-between py-5 sticky top-0 bg-white z-50">
+    <nav className="w-full flex justify-between py-5 sticky top-0 bg-white dark:bg-[#0d0d0d] z-50">
       {/* logo */}
-      <Image
-        src="/logo-sma-muad.png"
-        alt="logo sma muad"
-        width={474}
-        height={163}
-        className="w-1/6 lg:w-1/12"
-      />
+      <Link href="/" className="w-1/6 lg:w-1/12">
+        <Image
+          src="/sma-muad-logo.png"
+          alt="sma muad logo"
+          width={474}
+          height={163}
+        />
+      </Link>
 
       {/* link-item */}
       <div className="flex justify-center items-center gap-5">
         {linkItem.map((item, index) => (
-          <Link key={index} href={item.link}>
+          <Link
+            key={index}
+            href={item.link}
+            className="hover:text-orangePrimary duration-200 ease-in-out"
+          >
             {item.name}
           </Link>
         ))}

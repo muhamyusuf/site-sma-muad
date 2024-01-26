@@ -44,13 +44,12 @@ export default function Features() {
           <Card
             key={index}
             className={`${
-              index % 2 !== 0 ? "flex-row-reverse" : "flex-row"
-            } p-5 items-center gap-5 flex`}
+              index % 2 !== 0 ? "md:flex-row-reverse" : "md:flex-row"
+            } p-5 items-center gap-5 flex flex-col-reverse min-h-[400px] border-none z-30`}
           >
             <div className="md:w-1/2 w-full">
-              <p className="opacity-70 flex items-center">
-                <span className="text-[64px]">&#xb7;</span>
-                {item.order}
+              <p className="opacity-70">
+                <span className="font-extrabold">&#xb7;</span> {item.order}
               </p>
 
               <h3 className="font-bold mt-2 text-3xl">{item.title}</h3>
@@ -61,7 +60,7 @@ export default function Features() {
             </div>
 
             <div className="md:w-1/2 w-full">
-              <p>Gambar Pendukung</p>
+              <p>Di isi Gambar Pendukung</p>
               <Image
                 src={item.image}
                 alt="icon"

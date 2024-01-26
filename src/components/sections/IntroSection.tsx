@@ -1,7 +1,7 @@
 export default function IntroSection() {
   return (
     <main className="py-5">
-      <div className="bg-blueAccentForeground w-full min-h-[300px] md:min-h-[500px] rounded-md flex items-start pt-10 justify-center">
+      <div className="bg-blueAccentForeground w-full min-h-[400px] md:min-h-[600px] rounded-md flex items-start pt-10 justify-center">
         <div className="flex flex-col items-center text-center">
           <p className="opacity-50">Bukan Bualan Belaka</p>
 
@@ -17,7 +17,7 @@ export default function IntroSection() {
 
       {/* Video Backgorund */}
       <div className="flex justify-center items-center -mt-10">
-        Dikasi Video Background
+        Dikasi Video/Gambar Background Menggambarkan Prestasi
       </div>
     </main>
   );
