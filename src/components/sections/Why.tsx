@@ -31,7 +31,7 @@ export default function Why() {
       </div>
 
       {/* Feature */}
-      <div className="flex flex-col md:flex-row mt-10 gap-5">
+      {/* <div className="flex flex-col md:flex-row mt-10 gap-5">
         {whyDatas.map((item, index) => (
           <Card
             key={index}
@@ -50,6 +50,22 @@ export default function Why() {
             <p>{item.desc}</p>
           </Card>
         ))}
+      </div> */}
+
+      <div className="flex flex-col md:grid grid-cols-5 grid-rows-5 gap-4 mt-10">
+        <div className="col-span-3 row-span-3 border rounded-md p-10">1</div>
+        <div className="col-span-2 row-span-3 border rounded-md p-10 col-start-4">
+          6
+        </div>
+        <div className="col-span-2 row-span-2 border rounded-md p-10 row-start-4">
+          7
+        </div>
+        <div className="col-span-2 row-span-2 border rounded-md p-10 col-start-3 row-start-4">
+          8
+        </div>
+        <div className="row-span-2 col-start-5 border rounded-md p-10 row-start-4">
+          9
+        </div>
       </div>
     </main>
   );
