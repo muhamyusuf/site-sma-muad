@@ -46,7 +46,7 @@ export default function Footer() {
       <div className="border-y w-full min-h-[100px] flex flex-col py-5">
         <div className="w-full flex flex-col flex-wrap md:flex-row gap-10 md:gap-0 justify-between">
           {/* Logo */}
-          <div className="w-1/6">
+          <div className="w-1/4">
             <Image
               src="/sma-muad-logo.png"
               alt="sma muad logo"

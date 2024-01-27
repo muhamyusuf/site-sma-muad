@@ -1,12 +1,13 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-// import siteData from "@/data/siteData";
-// import UseAnimations from "react-useanimations";
-// import github from "react-useanimations/lib/github";
-// import linkedin from "react-useanimations/lib/linkedin";
-// import twitter from "react-useanimations/lib/twitter";
+import { Button } from "@/components/ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTrigger,
+} from "@/components/ui/sheet";
+import { AlignRight } from "lucide-react";
 
 const linkItem = [
   { name: "Home", link: "/" },
@@ -15,29 +16,11 @@ const linkItem = [
   { name: "Career", link: "/career" },
 ];
 
-// const socials = [
-//   {
-//     name: "Twitter",
-//     href: siteData.twitter,
-//     animation: twitter,
-//   },
-//   {
-//     name: "LinkedIn",
-//     href: siteData.linkedin,
-//     animation: linkedin,
-//   },
-//   {
-//     name: "GitHub",
-//     href: siteData.github,
-//     animation: github,
-//   },
-// ];
-
 export default function Navbar() {
   return (
-    <nav className="w-full flex justify-between py-5 sticky top-0 bg-white dark:bg-[#0d0d0d] z-50">
+    <nav className="w-full flex justify-between items-center py-5 sticky top-0 bg-white dark:bg-[#0d0d0d] z-50">
       {/* logo */}
-      <Link href="/" className="w-1/6 lg:w-1/12">
+      <Link href="/" className="w-1/4 lg:w-1/12">
         <Image
           src="/sma-muad-logo.png"
           alt="sma muad logo"
@@ -47,7 +30,7 @@ export default function Navbar() {
       </Link>
 
       {/* link-item */}
-      <div className="flex justify-center items-center gap-5">
+      <div className="justify-center items-center gap-5 hidden md:flex">
         {linkItem.map((item, index) => (
           <Link
             key={index}
@@ -59,21 +42,39 @@ export default function Navbar() {
         ))}
       </div>
 
-      {/* social media */}
-      {/* <div className="flex justify-center space-x-6 md:order-2">
-        {socials.map((item) => (
-          <a
-            key={item.name}
-            href={item.href}
-            className="transform  filter hover:contrast-50"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <span className="sr-only">{item.name}</span>
-            <UseAnimations animation={item.animation} strokeColor="#333" />
-          </a>
-        ))}
-      </div> */}
+      {/* Mobile Nav */}
+      <Sheet>
+        <SheetTrigger asChild className="block md:hidden border-none">
+          <Button variant="outline" className="py-1 px-2">
+            <AlignRight className="text-lg" />
+          </Button>
+        </SheetTrigger>
+
+        <SheetContent className="md:hidden">
+          <SheetHeader className="flex">
+            <Link href="/" className="w-1/3 mt-10 lg:w-1/12 self-end">
+              <Image
+                src="/sma-muad-logo.png"
+                alt="sma muad logo"
+                width={474}
+                height={163}
+              />
+            </Link>
+          </SheetHeader>
+
+          <div className="justify-center items-end w-full gap-5 flex flex-col mt-5">
+            {linkItem.map((item, index) => (
+              <Link
+                key={index}
+                href={item.link}
+                className="hover:text-orangePrimary duration-200 ease-in-out"
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+        </SheetContent>
+      </Sheet>
     </nav>
   );
 }
