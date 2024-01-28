@@ -65,7 +65,7 @@ export default function Footer() {
                   key={index}
                   href={item.link}
                   className="text-black hover:underline hover:underline-offset-2 hover:text-orangePrimary ease-in-out border p-2 rounded-full hover:border-orangePrimary"
-                  aria-describedby={item.name}
+                  aria-label={item.name}
                 >
                   <div className="text-2xl">{item.icon}</div>
                 </Link>
@@ -94,6 +94,7 @@ export default function Footer() {
                   key={index}
                   href={item.link}
                   className="text-black hover:underline hover:underline-offset-2 hover:text-orangePrimary ease-in-out"
+                  aria-label={item.name}
                 >
                   {item.name}
                 </Link>
@@ -115,6 +116,7 @@ export default function Footer() {
                   buttonVariants({ variant: "default" }),
                   "mt-5 bg-blueAccent hover:bg-blueAccent/80 ease-in-out duration-300"
                 )}
+                aria-label="View On G-Map"
               >
                 View On G-Map &rarr;
               </a>

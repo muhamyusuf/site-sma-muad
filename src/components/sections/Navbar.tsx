@@ -10,7 +10,7 @@ import {
 } from "@/components/ui/sheet";
 import { AlignRight } from "lucide-react";
 
-const linkItem = [
+const linkNavigation = [
   { name: "Home", link: "/" },
   { name: "About", link: "/about" },
   { name: "Blog/News", link: "https://blog-sma-muad.vercel.app" },
@@ -30,13 +30,14 @@ export default function Navbar() {
         />
       </Link>
 
-      {/* link-item */}
+      {/* link-navigation */}
       <div className="justify-center items-center gap-5 hidden md:flex">
-        {linkItem.map((item, index) => (
+        {linkNavigation.map((item, index) => (
           <Link
             key={index}
             href={item.link}
             className="hover:text-orangePrimary duration-200 ease-in-out"
+            aria-label={item.name}
           >
             {item.name}
           </Link>
@@ -46,7 +47,11 @@ export default function Navbar() {
       {/* Mobile Nav */}
       <Sheet>
         <SheetTrigger asChild className="block md:hidden border-none">
-          <Button variant="outline" className="py-1 px-2">
+          <Button
+            variant="outline"
+            className="py-1 px-2"
+            aria-label="Open Navbar Menu"
+          >
             <AlignRight className="text-lg" />
           </Button>
         </SheetTrigger>
@@ -64,11 +69,12 @@ export default function Navbar() {
           </SheetHeader>
 
           <div className="justify-center items-end w-full gap-5 flex flex-col mt-5">
-            {linkItem.map((item, index) => (
+            {linkNavigation.map((item, index) => (
               <Link
                 key={index}
                 href={item.link}
                 className="hover:text-orangePrimary duration-200 ease-in-out"
+                aria-label={item.name}
               >
                 <SheetClose>{item.name}</SheetClose>
               </Link>
