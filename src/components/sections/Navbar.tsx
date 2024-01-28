@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetHeader,
   SheetTrigger,
@@ -69,7 +70,7 @@ export default function Navbar() {
                 href={item.link}
                 className="hover:text-orangePrimary duration-200 ease-in-out"
               >
-                {item.name}
+                <SheetClose>{item.name}</SheetClose>
               </Link>
             ))}
           </div>

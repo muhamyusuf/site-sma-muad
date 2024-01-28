@@ -52,6 +52,8 @@ export default function Why() {
         ))}
       </div> */}
 
+      <p>Grid display</p>
+
       <div className="flex flex-col md:grid grid-cols-5 grid-rows-5 gap-4 mt-10">
         <div className="col-span-3 row-span-3 border rounded-md p-10">1</div>
         <div className="col-span-2 row-span-3 border rounded-md p-10 col-start-4">

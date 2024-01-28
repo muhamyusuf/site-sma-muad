@@ -61,13 +61,14 @@ export default function Footer() {
 
             <div className="flex items-center gap-2 mt-5">
               {socialLinks.map((item, index) => (
-                <a
+                <Link
                   key={index}
                   href={item.link}
                   className="text-black hover:underline hover:underline-offset-2 hover:text-orangePrimary ease-in-out border p-2 rounded-full hover:border-orangePrimary"
+                  aria-describedby={item.name}
                 >
                   <div className="text-2xl">{item.icon}</div>
-                </a>
+                </Link>
               ))}
             </div>
 
